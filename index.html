@@ -174,12 +174,12 @@ while true; do
     case $yn in
         [Yy]* )
 {
-snmpset -c wehave2makeit16c -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.2.$myrandom i 1
-snmpset -c wehave2makeit16c -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.3.$myrandom i 1
-snmpset -c wehave2makeit16c -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.4.$myrandom i 4
-snmpset -c wehave2makeit16c -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.5.$myrandom a 135.89.202.138
-snmpset -c wehave2makeit16c -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.6.$myrandom s provfix.txt
-snmpset -c wehave2makeit16c  -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.14.$myrandom i 1
+snmpset -c snmpstring -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.2.$myrandom i 1
+snmpset -c snmpstring -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.3.$myrandom i 1
+snmpset -c snmpstring -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.4.$myrandom i 4
+snmpset -c snmpstring -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.5.$myrandom a 1.1.1.1
+snmpset -c snmpstring -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.6.$myrandom s provfix.txt
+snmpset -c snmpstring -v 2c $hostip 1.3.6.1.4.1.9.9.96.1.1.1.1.14.$myrandom i 1
 } >/dev/null
 echo SNMPset executed, the configurations will attempt to be loaded to the router via TFTP.
 break;;
