@@ -61,6 +61,7 @@ h5 {
 #four{
   padding-left: 125px;
   color:white;
+  white-space: pre-wrap;
 }
 #five{
   padding-left: 150px;
@@ -100,7 +101,11 @@ h5 {
       <li><a href="#links_info">2.3 - Info</a></li>
     </ul>
   </li>
-  <li><a href="#scripts">3 - Scripts</a></li>
+  <li><a href="#scripts">3 - Scripts</a>
+    <ul>
+      <li><a href="#scripts_shell">3.1 - Shell</a></li>
+    </ul>
+  </li>
   </ul>
   </code>
   </div>
@@ -108,7 +113,7 @@ h5 {
 <h3 id="networking_commands_cisco">Cisco</h3>
 <h4>BGP Routes / Show / XR12416 / IOS-XR 4.3.31</h4>
 <p id="four">
-<code>show bgp vpnv4 unicast rd 13979:354485 1.1.1.1/32<br>
+<code>show bgp vpnv4 unicast rd 13979:354485 1.1.1.1/32
 show route rd-prefix 13979:354485:1.1.1.1/32</code>
 </p>
 <h3 id="networking_commands_juniper">Juniper</h3>
@@ -118,7 +123,7 @@ set routing-instances 13979:126398 protocols bgp group gp_13979:126398 neighbor 
 </code></p>
 <h4>Interface / Show / MX960 / JunOS 20.2R3-S2.5</h4>
 <p id="four"><code>
-show configuration interface xe-2/2/0.403 | display set<br>
+show configuration interface xe-2/2/0.403 | display set
 show configuration interface xe-2/2/0.403 | display set | match "unit 400 "
 </code></p>
 <h4>Prefix List / Show / MX960 / JunOS 20.2R3-S2.5</h4>
@@ -141,10 +146,10 @@ show configuration firewall family inet filter FW_PROTECT_LOOPBACK
 <h4>Cisco SNMP/TFTP Load Configurations</h4>
 <h5>Server Notes</h5>
 <p id="five"><code>
-/home/ab7690/provfix.sh<br>
-alias provfix="/home/ab7690/provfix.sh"<br>
-chmod a+rwx /home/ab7690/provfix.sh<br>
-chmod a+rwx /home/ab7690/provfix.txt<br>
+/home/ab7690/provfix.sh
+alias provfix="/home/ab7690/provfix.sh"
+chmod a+rwx /home/ab7690/provfix.sh
+chmod a+rwx /home/ab7690/provfix.txt
 dos2unix /home/ab7690/provfix.sh
 </code></p>
 <h5>Script</h5>
