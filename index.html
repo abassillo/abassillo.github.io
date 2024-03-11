@@ -140,14 +140,14 @@ show configuration firewall family inet filter FW_PROTECT_LOOPBACK
 <h4>Cisco SNMP/TFTP Load Configurations</h4>
 <h5>Server Notes</h5>
 <p id="five"><code>
-/home/ab7690/provfix.sh
-alias provfix="/home/ab7690/provfix.sh"
-chmod a+rwx /home/ab7690/provfix.sh
-chmod a+rwx /home/ab7690/provfix.txt
+/home/ab7690/provfix.sh<br>
+alias provfix="/home/ab7690/provfix.sh"<br>
+chmod a+rwx /home/ab7690/provfix.sh<br>
+chmod a+rwx /home/ab7690/provfix.txt<br>
 dos2unix /home/ab7690/provfix.sh
 </code></p>
 <h5>Script</h5>
-<p id="five"><code>
+<p id="five"><code><pre>
 #!/bin/bash
 echo What is the router\'s IP address?
 read hostip
@@ -209,6 +209,6 @@ done
 {
 rm /tftpdir/pub/provfix.txt
 } >/dev/null
-</code></p>
+</pre></code></p>
 </body>
 </html>
