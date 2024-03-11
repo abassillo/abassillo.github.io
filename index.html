@@ -108,6 +108,11 @@ show route rd-prefix 13979:354485:1.1.1.1/32</code>
 <p id="four"><code>
 set routing-instances 13979:126398 protocols bgp group gp_13979:126398 neighbor 10.102.8.1 graceful-restart disable</code>
 </code></p>
+<h4>Interface / Show / MX960 / JunOS 20.2R3-S2.5</h4>
+<p id="four"><code>
+show configuration interface xe-2/2/0.403 | display set<br>
+show configuration interface xe-2/2/0.403 | display set | match "unit 400 "
+</code></p>
 <h2 id="links">Links</h2>
 <h3 id="links_online">Online Applications</h3>
 <p id="three"><code>
