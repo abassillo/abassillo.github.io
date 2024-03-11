@@ -75,6 +75,7 @@ h4 {
 <body style="background-color:black;">
 <h1>AB's Quick Reference Guide</h1>
 <div id="toc_container">
+  <code>
   <ul class="toc_list">
     <li><a href="#networking_commands">1 - Networking Equipment Commands</a>
     <ul>
@@ -91,24 +92,25 @@ h4 {
   </li>
   <li><a href="#scripts">3 - Scripts</a></li>
   </ul>
+  </code>
   </div>
 <h2 id="networking_commands">Networking Equipment Commands</h2>
 <h3 id="networking_commands_cisco">Cisco</h3>
 <h4>BGP Routes / Show / XR12416 / IOS-XR 4.3.31</h4>
 <p id="four">
-<tt>show bgp vpnv4 unicast rd 13979:354485 1.1.1.1/32<br>
-show route rd-prefix 13979:354485:1.1.1.1/32</tt>
+<code>show bgp vpnv4 unicast rd 13979:354485 1.1.1.1/32<br>
+show route rd-prefix 13979:354485:1.1.1.1/32</code>
 </p>
 <h3 id="networking_commands_juniper">Juniper</h3>
 <h4>BGP Graceul Restart / Configure / MX960 / JunOS 20.2R3-S2.5</h4>
-<p id="four"><tt>
-set routing-instances 13979:126398 protocols bgp group gp_13979:126398 neighbor 10.102.8.1 graceful-restart disable</tt>
-</tt></p>
+<p id="four"><code>
+set routing-instances 13979:126398 protocols bgp group gp_13979:126398 neighbor 10.102.8.1 graceful-restart disable</code>
+</code></p>
 <h2 id="links">Links</h2>
 <h3 id="links_online">Online Applications</h3>
-<p id="three"><tt>
+<p id="three"><code>
 <a href="https://jodies.de/ipcalc" target="_blank">IP Calculator</a>
-</tt></p>
+</code></p>
 <h3 id="links_offline">Installable Applications</h3>
 <h3 id="links_info">Information</h3>
 <h2 id="scripts">Scripts</h2>
