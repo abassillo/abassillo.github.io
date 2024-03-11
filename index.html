@@ -58,30 +58,66 @@ h4 {
   padding-left: 125px;
   color:white;
 }
+
+#toc_container {
+    background: #f9f9f9 none repeat scroll 0 0;
+    border: 1px solid #aaa;
+    display: table;
+    font-size: 95%;
+    margin-bottom: 1em;
+    padding: 20px;
+    width: auto;
+}
+.toc_title {
+    font-weight: 700;
+    text-align: center;
+}
+#toc_container li, #toc_container ul, #toc_container ul li{
+    list-style: outside none none !important;
+}
 </style>
 </head>
 <html>
 <body style="background-color:black;">
 <h1>AB's Quick Reference Guide</h1>
-<h2>Networking Equipment Commands</h2>
-<h3>Cisco</h3>
+<div id="toc_container">
+  <p class="toc_title">Contents</p>
+  <ul class="toc_list">
+    <li><a href="#networking_commands">1 Networking Equipment Commands</a>
+    <ul>
+      <li><a href="#networking_commands_cisco">1.1 Cisco</a></li>
+      <li><a href="#networking_commands_juniper">1.2 Juniper</a></li>
+    </ul>
+  </li>
+  <li><a href="#links">2 Links</a>
+    <ul>
+      <li><a href="#links_online">2.1 Online</a></li>
+      <li><a href="#links_offline">2.2 Offline</a></li>
+      <li><a href="#links_info">2.3 Info</a></li>
+    </ul>
+  </li>
+  <li><a href="#scripts">3 Scripts</a></li>
+  </ul>
+  </div>
+<h2 id="networking_commands">Networking Equipment Commands</h2>
+<h3 id="networking_commands_cisco">Cisco</h3>
 <h4>BGP Routes / Show / XR12416 / IOS-XR 4.3.31</h4>
 <p id="four">
 <tt>show bgp vpnv4 unicast rd 13979:354485 1.1.1.1/32<br>
 show route rd-prefix 13979:354485:1.1.1.1/32</tt>
 </p>
-<h3>Juniper</h3>
+<h3 id="networking_commands_juniper">Juniper</h3>
 <h4>BGP Graceul Restart / Configure / MX960 / JunOS 20.2R3-S2.5</h4>
 <p id="four"><tt>
 set routing-instances 13979:126398 protocols bgp group gp_13979:126398 neighbor 10.102.8.1 graceful-restart disable</tt>
 </tt></p>
-<h2>Links</h2>
-<h3>Online Applications</h3>
+<h2 id="links">Links</h2>
+<h3 id="links_online">Online Applications</h3>
 <p id="three"><tt>
 <a href="https://jodies.de/ipcalc" target="_blank">IP Calculator</a>
 </tt></p>
-<h3>Installable Applications</h3>
-<h3>Information</h3>
-<h2>Scripts</h2>
+<h3 id="links_offline">Installable Applications</h3>
+<h3 id="links_info">Information</h3>
+<h2 id="scripts">Scripts</h2>
 </body>
 </html>
