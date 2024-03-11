@@ -111,27 +111,22 @@ h5 {
   </div>
 <h2 id="networking_commands">Networking Equipment Commands</h2>
 <h3 id="networking_commands_cisco">Cisco</h3>
-<h4>BGP Routes / Show / XR12416 / IOS-XR 4.3.31</h4>
-<p id="four">
+<h4>BGP Routes / Show / XR12416 / IOS-XR 4.3.31</h4><p id="four">
 <code>show bgp vpnv4 unicast rd 13979:354485 1.1.1.1/32
 show route rd-prefix 13979:354485:1.1.1.1/32</code>
 </p>
 <h3 id="networking_commands_juniper">Juniper</h3>
-<h4>BGP Graceul Restart / Configure / MX960 / JunOS 20.2R3-S2.5</h4>
-<p id="four"><code>
+<h4>BGP Graceul Restart / Configure / MX960 / JunOS 20.2R3-S2.5</h4><p id="four"><code>
 set routing-instances 13979:126398 protocols bgp group gp_13979:126398 neighbor 10.102.8.1 graceful-restart disable
 </code></p>
-<h4>Interface / Show / MX960 / JunOS 20.2R3-S2.5</h4>
-<p id="four"><code>
+<h4>Interface / Show / MX960 / JunOS 20.2R3-S2.5</h4><p id="four"><code>
 show configuration interface xe-2/2/0.403 | display set
 show configuration interface xe-2/2/0.403 | display set | match "unit 400 "
 </code></p>
-<h4>Prefix List / Show / MX960 / JunOS 20.2R3-S2.5</h4>
-<p id="four"><code>
+<h4>Prefix List / Show / MX960 / JunOS 20.2R3-S2.5</h4><p id="four"><code>
 show configuration policy-options prefix-list PL_CGN_ADDRESSES
 </code></p>
-<h4>Filters / Show / MX960 / JunOS 20.2R3-S2.5</h4>
-<p id="four"><code>
+<h4>Filters / Show / MX960 / JunOS 20.2R3-S2.5</h4><p id="four"><code>
 show configuration firewall family inet filter FW_PROTECT_LOOPBACK
 </code></p>
 <h2 id="links">Links</h2>
@@ -144,16 +139,14 @@ show configuration firewall family inet filter FW_PROTECT_LOOPBACK
 <h2 id="scripts">Scripts</h2>
 <h3 id="scripts_shell">Shell Script</h3>
 <h4>Cisco SNMP/TFTP Load Configurations</h4>
-<h5>Server Notes</h5>
-<p id="five"><code>
+<h5>Server Notes</h5><p id="five"><code>
 /home/ab7690/provfix.sh
 alias provfix="/home/ab7690/provfix.sh"
 chmod a+rwx /home/ab7690/provfix.sh
 chmod a+rwx /home/ab7690/provfix.txt
 dos2unix /home/ab7690/provfix.sh
 </code></p>
-<h5>Script</h5>
-<p id="five"><code>
+<h5>Script</h5><p id="five"><code>
 #!/bin/bash
 echo What is the router\'s IP address?
 read hostip
