@@ -6,21 +6,17 @@ a:link {
   background-color: transparent;
   text-decoration: none;
 }
-
 a:visited {
   color: white;
   background-color: transparent;
   text-decoration: none;
 }
-
 a:hover {
   color: white;
   background-color: transparent;
   text-decoration: none;
   font-weight: bold;
-
 }
-
 a:active {
   color: white;
   background-color: transparent;
@@ -80,6 +76,9 @@ h5 {
 #toc_container li, #toc_container ul, #toc_container ul li{
     list-style: outside none none !important;
 }
+table.linux_table {
+  padding-left: 125px
+}
 </style>
 </head>
 <html>
@@ -131,7 +130,7 @@ show configuration interface xe-2/2/0.403 | display set | match "unit 400 "
 <p id="four"><code>show configuration firewall family inet filter FW_PROTECT_LOOPBACK
 </code></p>
 <h3 id="commands_linux">Linux</h3>
-<table>
+<table class="linux_table">
   <tr>
     <th>Syntax</th>
     <th>Description</th>
