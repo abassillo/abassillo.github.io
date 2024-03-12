@@ -132,8 +132,20 @@ show configuration interface xe-2/2/0.403 | display set | match "unit 400 "
 </code></p>
 <h3 id="commands_linux">Linux</h3>
 <h4>Backup and Compress / RHEL</h4>
-<p id="four"><code>chmod g+w [file]</code> Adds write access for group members.
-<code>chmod o+rwx [file]</code> Adds read/write/execute access for other users.
+<p id="four"><table>
+  <tr>
+    <th>Syntax</th>
+    <th>Description</th>
+  </tr>
+  <tr>
+    <td><code>chmod g+w [file]</code></td>
+    <td>Adds write access for group members.</td>
+  </tr>
+  <tr>
+    <td><code>chmod o+rwx [file]</code></td>
+    <td>Adds read/write/execute access for other users.</td>
+  </tr>
+</table>
 <code>df | grep app_vg</code> Checks server storage space.
 <code>pwd</code> Shows current directly.
 <code>rm -r</code> Removes Directory and Files.
