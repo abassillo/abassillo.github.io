@@ -132,7 +132,23 @@ show configuration interface xe-2/2/0.403 | display set | match "unit 400 "
 </code></p>
 <h3 id="commands_linux">Linux</h3>
 <h4>Backup and Compress / RHEL</h4>
-<p id="four"><code>tar -czvf backup.tar.gz /home/apache/.profile /opt/app/workload/
+<p id="four"><code>chmod g+w [file]</code> Adds write access for group members.
+<code>chmod o+rwx [file]</code> Adds read/write/execute access for other users.
+<code>df | grep app_vg</code> Checks server storage space.
+<code>pwd</code> Shows current directly.
+<code>rm -r</code> Removes Directory and Files.
+<code>head</code> Prints First 10 Lines.
+<code>tail</code> Prints Last 10 Lines.
+<code>grep [string] [file]</code> Search.
+<code>cmp [file1] [file2]</code> Compares Two Files.
+<code>find | grep [string]</code> Searches for filename matches.
+<code>ip addr show</code> Shows interface IP information.
+<code>hostname</code> Shows system hostname.
+<code>/bin/netstat -tanp | grep LISTEN</code> Shows open ports for server.
+<code>cal</code> Shows calendar with current date.
+<code>history</code> Shows command history executed by current user.
+<code>cp -avr [dir1] [dir2]</code> Copys entire contents of directory.
+<code>tar -czvf backup.tar.gz /home/apache/.profile /opt/app/workload/
 </code></p>
 <h2 id="links">Links</h2>
 <h3 id="links_online">Online Applications</h3>
