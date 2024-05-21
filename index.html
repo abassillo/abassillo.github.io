@@ -307,5 +307,2089 @@ done
 rm /tftpdir/pub/provfix.txt
 } >/dev/null
 </code></p>
+
+
+VI Editor
+
+vim <file>: Opens file in VIM.
+x: Deletes Character.
+dw: Deletes Word.
+dd: Deletes Line.
+i: Edit mode.
+:wq!: Save and Quit.
+:q!: Quit without saving.
+
+Variable, Path & Alias
+Variable (General):
+export <var>=<path>
+export EXAMPLE=/opt/app/workload/example
+echo $EXAMPLE: For confirmation use.
+
+Path (General):
+export PATH=$PATH:<additional path>
+export PATH=$PATH:/opt/app/workload/bin
+echo $PATH: For confirmation use.
+
+Alias (General):
+
+·          
+
+o     
+
+vim ~/.bashrc: Add here to enable during login.
+source ~/.bashrc: Run to enable immediately.
+alias <name>='<command>'
+alias websu='sudo -iu apache'
+alias: To see aliases.
+
+Variable & Path (Required for BSD-HS):
+
+·          
+
+o     
+
+vim ~/.profile: Add here to enable during login. For apache for example.
+
+export JAVA_HOME=/opt/app/java/jdk/jdk180
+export CATALINA_HOME=/opt/app/workload/tomcat/apache-tomcat-9.0.30
+export PATH=$PATH:$JAVA_HOME/bin:/opt/app/workload/bin
+TARBALL
+·          
+
+Files have been packed into a tar file, which has then been compressed.
+Create TARBALL:
+tar -czvf filename.tar.gz </path/to/dir1>
+tar -czvf filename.tar.gz </path/to/dir1> </path/to/dir2> <file1> <file2>
+
+Extract TARBALL:
+tar -xzvf <file.tar.gz>
+tar -xzvf <file.tar.gz> -C </to/diff/dir/>
+
+SED
+·          
+
+Stream Editor used for substitution or for find and replace.
+find . -type f -exec sed -i.backup 's/APPLE/ORANGE/g' {} \;
+Finds all occurrences of 'APPLE' and replaced with 'ORANGE' in all files current directory. Also creates backup files.
+
+sed -i.backup 's/APPLE/ORANGE/g' FILENAME
+Finds all occurrences of 'APPLE' and replaced with 'ORANGE' in a single file named 'FILENAME'. Also creates a backup.
+
+Allow Forward Slashes(/): Use Back Slash (\)
+Example: /dir/ORANGE sed to /APPLE
+'s/\/dir\/ORANGE/\/APPLE/g'
+
+PHP
+Running version 7.2.26
+/opt/app/workload/bin/php -version
+PHP Test File: <?php phpinfo(); ?>
+
+PHP
+Set Variable
+$div_number = $_POST['diversion_flex_number'];
+
+IF statement
+if($div_version=='ipv4'){
+echo " voice-class sip profile 1\n";
+}
+
+Dial-peer Array
+$dp_array_no911 = array(100, 110, 200, 210, 400, 500, 510, 501, 511, 700, 710, 900, 910);
+
+Dial-peer Loop
+foreach($dp_array_no911 as &$dp_number){
+echo "dial-peer voice " . $dp_number . " voip\n";
+echo " voice-class sip profile 1\n";
+}
+
+Array Push
+$cname_array = array($pri_d1);
+if(!empty($pri_d2)){
+array_push($cname_array,$pri_d2);
+}
+if(!empty($pri_d3)){
+array_push($cname_array,$pri_d3);
+}
+if(!empty($pri_d4)){
+array_push($cname_array,$pri_d4);
+}
+
+Git
+git init .
+git remote add nonprod https://codecloud.web.att.com/scm/st_bsdhsprod/bsdhs_np.git
+git remote add origin https://codecloud.web.att.com/scm/st_bsdhsprod/bsdhs.git
+git archive --format=zip --output webapps.zip HEAD
+
+git status
+git add .
+git commit -m "adding webapps zip"
+git push origin master
+git push nonprod nonprod
+git branch
+git checkout master
+git checkout nonprod
+git checkout --patch nonprod webapps/ROOT/WEB-INF/mainpage.html
+git merge nonprod
+
+Regex Creator
+https://www.analyticsmarket.com/freetools/ipregex/
+Created by Angelo R Bassillo on Apr 05, 2023
+Heading
+<%@ page import = "javax.servlet.*,java.text.*,java.util.*, java.io.*, java.net.*" %>
+
+Container
+<% %>
+
+Include Page
+%@include file = "add_ipbe_config_pattern.jsp"%
+
+Print Output (text)
+out.print("Hello World");
+
+Print Output (variable)
+out.print("Hello " + world);
+
+Variable from HTML Post
+String pri_d1 = request.getParameter("pri_port1");
+
+Variable (int)
+int count = 300;
+
+Array (String)
+ArrayList<String> cname_array = new ArrayList<String>();
+cname_array.add(pri_d1);
+
+Array (int)
+int[] dp_array={100, 110, 200, 210, 400, 500, 510, 501, 511, 700, 710, 900, 910, 901, 911};
+
+Array (multi-dimensional)
+String[][] sip_src_array = new String[6][2];
+
+/**
+0 - IP
+1 - Mask
+**/
+
+for(int i=0; i<7; i++){
+ for(int j=0; j<3; j++){
+  sip_src_array[i][j]=new String();
+  }
+ }
+
+IF (not empty)
+if(!pri_d2.isEmpty()){ }
+
+IF (string equals)
+if (pri_cname.equals("facility")){ }
+
+IF (int equals)
+if (dp_value == 200){ }
+
+FOREACH (string)
+for (int i=0; i < cname_array.size(); i ++){
+String currentarray = cname_array.get(i); }
+
+FOREACH (int)
+int j;
+for(j=0;j<dp_array.length;j++){
+out.print("dial-peer voice " + dp_array[j] + " voip\n");}
+
+String to Int
+int tdm_modem_in_dp = Integer.parseInt(request.getParameter("tdm_modem_in_dp"));
+
+int to String
+String.valueOf(i);
+
+Substring
+String tru_m1 = "";
+if(!tdm_modem_in_modem_1.isEmpty()){
+tru_m1 = tdm_modem_in_modem_1.substring(tdm_modem_in_modem_1.length() - tdm_modem_in_ext_length); }
+
+Replace
+cleancardarray[i] = analog_array[i].replace("/"," ");
+
+Replace (Wildcard)
+cleancardarray[i] = cleancardarray[i].replaceAll("0 0 .*","voice-card 0");
+
+Array Remove Duplicates
+String[] uniquearray = new String[32];
+
+for(int i=0; i<32; i++){
+uniquearray[i]=new String();
+}
+
+for(int i=0; i<32; i++){
+if (!cleancardarray[i].isEmpty()){
+boolean isfound = false;
+for(int j=0; j<i; j++){
+if (uniquearray[j].equals(cleancardarray[i])){
+isfound = true;
+}
+}
+if(!isfound){
+uniquearray[i]=cleancardarray[i];
+}
+}
+}
+
+Array Check
+out.println(Arrays.toString(bib_effs_hunt_array));
+out.println(Arrays.deepToString(bib_array));
+
+IP Address
+Function
+<%!
+public long ip2long(String ipAddress) {
+long result = 0;
+String[] ipAddressInArray = ipAddress.split(\\.);
+for (int i = 3; i >= 0; i--) {
+long ip = Long.parseLong(ipAddressInArray[3 - i]);
+result |= ip << (i*8);
+}
+return result;
+}
+%>
+
+<%!
+public String long2ip(long ip) {
+String result = "";
+for (int i = 0; i < 4; i++) {
+result = Long.toString(ip & 0xff) + result;
+if (i < 3) {
+result = "." + result;
+}
+ip = ip >> 8;
+}
+return result.toString();
+}
+%>
+
+Values
+%@include file = "ipaddresses.jsp"%
+long ip_address_long = ip2long(lan_ip);
+long ip_nmask_long = ip2long(lan_mask);
+long ip_net = ip_address_long & ip_nmask_long;
+String lan_net = long2ip(ip_net);
+long ip_broadcast_invert = ~ip_nmask_long;
+String lan_wild = long2ip(ip_broadcast_invert);
+
+Enumeration
+<%
+Enumeration in = request.getParameterNames();
+while(in.hasMoreElements()) {
+String paramName = in.nextElement().toString();
+out.println("Field " + paramName + " is " + request.getParameter(paramName)+"<br>");
+}
+%>
+
+Packages
+https://docs.oracle.com/javase/8/docs/api/java/util/package-summary.html - java.util.
+https://docs.oracle.com/javase/8/docs/api/java/io/package-summary.html - java.io.
+https://docs.oracle.com/javase/8/docs/api/java/net/package-summary.html - java.net.
+
+Validation
+Regex validation does not currently appear to be working. However the predefined ones such as IPv4 do work.  Issue has been reported to Tomas Vala.
+Regex Example: (10 digits Number)
+3 digit
+"validatorRegExp": "^\\d{3}$",
+Any Digit
+"validatorRegExp": "^\\d+$",
+ATTUID
+"validatorRegExp": "^[a-zA-Z]{2}\\d{3}[A-Za-z0-9]$",
+1-500
+"validatorRegExp": "^([1-9]|[1-9][0-9]|[1-4][0-9][0-9]|500)$",
+D Channel
+"validatorRegExp": "^[S-Ss-s]erial\\d/\\d/\\d:23$|^[S-Ss-s]erial\\d/\\d:23$|^[S-Ss-s]\\d/\\d/\\d:23$|^[S_Ss-s]\\d/\\d:23$",
+Cisco Gig or Fast Ethernet w/ sub-interface support
+"validatorRegExp": "^(((([F-Ff-f]ast)|([G-Gg-g]igabit))([E-Ee-e]thernet))|[F-Ff-f][E-Ee-e]|[F-Ff-f][A-Aa-a]|[G-Gg-g][E-Ee-e]|[G-Gg-g]|[F-Ff-f])(\\d/\\d|\\d/\\d/\\d)($|.\\d+$)",
+IPv4 or IPv6
+"validatorRegExp": "(^(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))$|^((25[0-5]|(2[0-4]|1\\d|[1-9]|)\\d)\\.?\\b){4}$)",
+http://aruljohn.com/mac.pl
+
+http://www.dnsgoodies.com/
+
+SNMP WALK
+IPV6:
+snmpwalk -v 2c -c gps21P28S19J17JH udp6:[2001:1890:E027:289B::10]
+
+IPV4:
+snmpwalk -v 2c -c gps21P28S19J17JH 12.209.1.1
+
+Created by Angelo R Bassillo, last modified on Jun 22, 2020
+CLI application used to convert G729 RTP packets from Wireshark into audio that can be listened to.  Useful for troubleshooting call quality issues and things of this nature.  A copy of this software can be found on our internal shared drive:
+
+\\GAALPA1CDFILE72.itservices.sbc.com\BVOIPServiceDelivery\G729
+
+Capture traffic on the router.
+Filtered the call we were looking for.
+Show all the RTP streams.
+Saved RTP stream as raw data.
+Use decoder to decode from .raw to .pcm ‘va_g729_decoder.exe <filename.raw> <filename.pcm>
+Import .pcm file to audacity
+Change sample rate in audacity to 8000 mhz
+Export from audacity to .wav file
+
+Audacity
+Signed 16-bit pcm
+Little-endian
+1 channel (mono)
+8000 HZ
+https://www.audacityteam.org/
+
+
+NIC Tuning
+
+Windows PC NIC Tuning for 1 Gbps Speed Tests
+
+The PC's NIC (Network Interface Card / Controller) can be a bottleneck when testing very high-speed access circuits (e.g., 1 Gbps). Some specific 1 Gbps NIC requirements:
+
+·          
+
+o     
+
+It must be a PCIe NIC as the older PCI NIC cannot support data transfer at the full 1 Gbps rate.
+If using a USB dongle to connect the Ethernet cable to the PC, it must be USB 3.0 or later.
+The interface connecting the PC to the router or switch must be an Ethernet cable, not a Wi-Fi or cellular (e.g. LTE) connection.
+Some NICs also need special tuning to support throughput at 1 Gbps. Specifically:
+
+The Windows Ethernet Adapter Receive Buffers need to be tuned larger than their default of 256 buffers in order to receive at a sustained rate of 1 Gbps without dropping packets.
+
+With Windows 10, this can be navigated as follows (exact steps may vary as a function of the adapter type and Windows release):
+
+Control Panel
+Network and Internet
+View Network Status and Tasks (Network Connections)
+Change Adapter Settings
+Ethernet
+Properties
+Configure
+Advanced tab - Increase the Receive Buffers value to at least 512
+
+Example of How Customer Sets Local Preference for IPBEs:
+ip community-list 1 permit 65071:120
+ip community-list 2 permit 65071:110
+
+route-map inbound_from_att permit 10
+ match community 1
+ set local-preference 120
+
+route-map inbound_from_att permit 15
+ match community 2
+ set local-preference 110
+
+ Layer 2 (HSRP Example)
+
+ Configuration Example
+ Primary Router
+ track 1 ip route 12.194.105.168/29 reachability
+ !
+ access-list 3 permit any
+ !
+ ip route 32.252.58.90 255.255.255.255 GigabitEthernet0/0/1 name BVOIP
+ !
+ interface GigabitEthernet0/0/1
+ desc BVOIP BGP-R PRIMARY TP USNSIODENCO01H
+ ip address 32.252.58.94 255.255.255.248
+ standby 1 ip 32.252.58.89 255.255.255.248
+ standby 1 timers 1 3
+ standby 1 priority 120
+ standby 1 preempt delay minimum 60
+ standby 1 track 1 decrement 50
+ !
+ ip as-path access-list 1 deny _64600_
+ ip as-path access-list 1 permit .*
+ !
+ ip prefix-list WAN-CV-Value-120 description - Routes sent to WAN with CV 120
+ ip prefix-list WAN-CV-Value-120 seq 10 permit 32.252.58.90/32
+ !
+ ip prefix-list WAN-CV-Value-100 description - Routes sent to WAN with CV 100
+ ip prefix-list WAN-CV-Value-100 seq 100 permit 32.1.31.160/32
+ ip prefix-list WAN-CV-Value-100 seq 110 permit 32.246.165.20/30 le 32
+ !
+ route-map AVPN_Routes_In permit 10
+ match ip address 3
+ set weight 64000
+ !
+ route-map Customer_Networks permit 10
+ match ip address prefix-list WAN-CV-Value-120
+ set as-path prepend 64600
+ set community 13979:120 additive
+ !
+ route-map Customer_Networks permit 30
+ match ip address prefix-list WAN-CV-Value-100
+ !
+ ip bgp-community new-format
+ !
+ router bgp 64512
+ address-family ipv4
+   network 32.252.58.90 mask 255.255.255.255
+   no network 32.252.58.88 mask 255.255.255.248
+   neighbor 32.246.165.21 send-community both
+   neighbor 32.246.165.21 filter-list 1 in
+   neighbor 32.246.165.21 route-map Customer_Networks out
+   neighbor 32.246.165.21 route-map AVPN_Routes_In in
+ exit-address-family
+ 
+ Secondary Router
+ track 1 ip route 12.194.105.168/29 reachability
+ !
+ access-list 3 permit any
+ !
+ ip as-path access-list 1 deny _64600_
+ ip as-path access-list 1 permit .*
+ !
+ ip prefix-list WAN-CV-Value-120 description - Routes sent to WAN with CV 120
+ ip prefix-list WAN-CV-Value-120 seq 10 permit 32.252.52.144/29
+ !
+ ip prefix-list WAN-CV-Value-110 description - Routes sent to WAN with CV 110
+ ip prefix-list WAN-CV-Value-110 seq 10 permit 32.252.58.88/29
+ !
+ ip prefix-list WAN-CV-Value-100 description - Routes sent to WAN with CV 100
+ ip prefix-list WAN-CV-Value-100 seq 100 permit 32.246.197.136/32
+ ip prefix-list WAN-CV-Value-100 seq 110 permit 32.2.15.0/30 le 32
+ !
+ route-map AVPN_Routes_In permit 10
+ match ip address 3
+ set weight 64000
+ !
+ route-map Customer_Networks permit 10
+ match ip address prefix-list WAN-CV-Value-120
+ set as-path prepend 64600
+ set community 13979:120 additive
+ !
+ route-map Customer_Networks permit 20
+ match ip address prefix-list WAN-CV-Value-110
+ set as-path prepend 64600
+ set community 13979:110 additive
+ !
+ route-map Customer_Networks permit 30
+ match ip address prefix-list WAN-CV-Value-100
+ !
+ interface GigabitEthernet0/1/0
+ desc BVOIP BGP-R BACKUP FOR USNSIODENCO02R
+ ip address 32.252.58.93 255.255.255.248
+ standby 1 ip 32.252.58.89 255.255.255.248
+ standby 1 timers 1 3
+ standby 1 priority 90
+ standby 1 preempt
+ standby 1 track 1 decrement 50
+ no shutdown
+ !
+ ip bgp-community new-format
+ !
+ router bgp 64512
+ address-family ipv4
+   network 32.252.58.88 mask 255.255.255.248
+   neighbor 32.2.15.1 send-community both
+   neighbor 32.2.15.1 filter-list 1 in
+   neighbor 32.2.15.1 route-map Customer_Networks out
+   neighbor 32.2.15.1 route-map AVPN_Routes_In in
+ exit-address-family
+ 
+ Configuration Example
+ int Loopback0
+  ip address 32.1.1.1 255.255.255.255
+ !
+ router bgp 65000
+  timers bgp 3 9
+   neighbor 12.2.2.1 remote-as 13979
+   neighbor 192.168.0.2 remote-as 65527
+ !
+  address-family ipv4
+   neighbor 12.2.2.1 activate
+   neighbor 12.2.2.1 send-community both
+   neighbor 12.2.2.1 allowas-in
+   neighbor 12.2.2.1 soft-reconfiguration inbound
+   neighbor 12.2.2.1 route-map AVPN_Routes_In_Primary in
+   neighbor 12.2.2.1 route-map Customer_Networks out
+   neighbor 12.2.2.1 filter-list 1 in
+   neighbor 192.168.0.2 activate
+   neighbor 192.168.0.2 send-community both
+   neighbor 192.168.0.2 soft-reconfiguration inbound
+   neighbor 192.168.0.2 route-map LAN_To_WAN_Routes in
+   neighbor 192.168.0.2 route-map WAN_To_LAN_Routes out
+  exit-address-family
+ !
+ ip bgp-community new-format
+ !
+ ip as-path access-list 1 deny _64600_
+ ip as-path access-list 1 permit .*
+ !
+ ip prefix-list LAN-CV-Value-110 description - Routes sent to LAN with CV 110
+ ip prefix-list LAN-CV-Value-110 seq 5 permit 12.194.0.0/28
+ ip prefix-list LAN-CV-Value-110 seq 5 permit 12.194.1.0/28
+ ip prefix-list LAN-CV-Value-110 seq 100 deny 0.0.0.0/0 le 32
+ !
+ ip prefix-list LAN-CV-Value-120 description - Routes sent to LAN with CV 120
+ ip prefix-list LAN-CV-Value-120 seq 5 permit 12.194.2.0/28
+ ip prefix-list LAN-CV-Value-120 seq 5 permit 12.194.3.0/28
+ ip prefix-list LAN-CV-Value-120 seq 100 deny 0.0.0.0/0 le 32
+ !
+ ip prefix-list LAN-To-WAN description - Valid LAN Routes To Be Sent To WAN
+ ip prefix-list LAN-To-WAN seq 5 permit 32.252.0.2/32
+ ip prefix-list LAN-To-WAN seq 10 permit 32.252.1.0/29
+ ip prefix-list LAN-To-WAN seq 15 permit 192.168.0.0/24
+ ip prefix-list LAN-To-WAN seq 100 deny 0.0.0.0/0 le 32
+ !
+ ip prefix-list WAN-CV-Value-100 description - Routes sent to WAN with CV 100
+ ip prefix-list WAN-CV-Value-100 seq 5 permit 32.1.1.1/32
+ ip prefix-list WAN-CV-Value-100 seq 10 permit 192.168.0.0/24
+ ip prefix-list WAN-CV-Value-100 seq 100 deny 0.0.0.0/0 le 32
+ !
+ ip prefix-list WAN-CV-Value-110 description - Routes sent to WAN with CV 110
+ ip prefix-list WAN-CV-Value-110 seq 5 permit 32.252.1.0/29
+ ip prefix-list WAN-CV-Value-110 seq 100 deny 0.0.0.0/0 le 32
+ !
+ ip prefix-list WAN-CV-Value-120 description - Routes sent to WAN with CV 120
+ ip prefix-list WAN-CV-Value-120 seq 5 permit 32.252.0.2/32
+ ip prefix-list WAN-CV-Value-120 seq 100 deny 0.0.0.0/0 le 32
+ !
+ access-list 3 permit any
+ !
+ route-map AVPN_Routes_In_Primary permit 10
+   match ip address 3
+   set weight 64000
+ !
+ route-map LAN_To_WAN_Routes permit 10
+   match ip address prefix-list LAN-To-WAN
+ !
+ route-map WAN_To_LAN_Routes permit 10
+   match ip address prefix-list LAN-CV-Value-120
+   set as-path prepend 64600
+   set community 13979:120 additive
+ !
+ route-map WAN_To_LAN_Routes permit 20
+   match ip address prefix-list LAN-CV-Value-110
+   set as-path pr
+ 
+NS CISCO CUBE V4
+!!! ENSURE IOS VERSION IS 16.6.1        !!!
+!!!   show version                      !!!
+!!! VERIFY UCK9 LICENSE IS ACTIVE       !!!
+!!!   show license                      !!!
+!!! ADD LICENSE IF MISSING              !!!
+!!!   license accept end user agreement !!!
+!!!   license boot level uck9           !!!
+!!! REBOOT THEN REQUIRED                !!!
+!!!   wr                                !!!
+!!!   reload                            !!!
+
+!!! IP SECTION
+logging monitor 7
+interface Loopback60000
+ description ATT IP Flexible Reach Signaling IP
+ ip address 12.213.1.1 255.255.255.255
+exit
+!
+router bgp 65001
+ address-family ipv4
+  network 12.213.1.1 mask 255.255.255.255
+exit
+exit
+
+!!! ENABLE CUBE
+voice service voip
+ mode border-element
+exit
+exit
+!
+wr
+
+!!!!!!!!!!!!!!!!!!!!!!!
+!!! REBOOT REQUIRED !!!
+!!!!!!!!!!!!!!!!!!!!!!!
+
+!!! SIP SECTION
+voice service voip
+ address-hiding
+ allow-connections sip to sip
+ redirect ip2ip
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ sip
+  bind control source-interface Loopback60000
+  bind media source-interface Loopback60000
+  header-passing
+  error-passthru
+  no update-callerid
+  midcall-signaling passthru
+  privacy-policy passthru
+  g729 annexb-all
+exit
+exit
+!
+voice class sip-profiles 1
+ request INVITE sdp-header Audio-Attribute modify "a=ptime:20" "a=ptime:30"
+ request ANY sdp-header Audio-Attribute modify "a=ptime:20" "a=ptime:30"
+ request REINVITE sdp-header Audio-Attribute modify "a=t38faxfillbitremoval:0" ""
+ request INVITE sdp-header Audio-Attribute add "a=ptime:30"
+ response ANY sip-header Allow-Header modify "UPDATE," ""
+exit
+!
+ip rtcp report interval 3000
+no mgcp package-capability res-package
+no mgcp package-capability fxr-package
+no mgcp timer receive-rtcp
+mgcp fax t38 ecm
+!
+gateway
+ media-inactivity-criteria all
+ timer receive-rtcp 5
+ timer receive-rtp 86400
+exit
+!
+sip-ua
+ no remote-party-id
+ retry invite 2
+ timers expires 1800000
+ connection-reuse
+exit
+!
+
+!!! CODEC SECTION
+voice class codec 1
+ codec preference 1 g729r8 bytes 30
+ codec preference 2 g711ulaw
+exit
+
+!!! TRANSLATION SECTION
+voice translation-rule 6
+ rule 1 /^\+00000\(.*$\)/ /\1/
+exit
+!
+voice translation-profile STRIP_ZEROS
+ translate called 6
+exit
+!
+voice translation-rule 7
+ rule 1 /^/ /+/
+exit
+!
+voice translation-profile ADD_PLUS
+ translate called 7
+exit
+
+!!! DIALPEER SECTION
+dial-peer hunt 1
+!
+dial-peer voice 1110 voip
+ description Outbound Call for DomesticCUBEtoIPBE
+ destination-pattern [0-9]T
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1111 voip
+ description Outbound Call for DomesticCUBEtoIPBE
+ destination-pattern [0-9]T
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1120 voip
+ description Outbound Call for InternationalCUBEtoIPBE
+ destination-pattern 011T
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1121 voip
+ description Outbound Call for InternationalCUBEtoIPBE
+ destination-pattern 011T
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1130 voip
+ description Outbound Call for N11CUBEtoIPBE
+ destination-pattern [2-8]11
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1131 voip
+ description Outbound Call for N11CUBEtoIPBE
+ destination-pattern [2-8]11
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1140 voip
+ description Outbound Call for 911CUBEtoIPBE
+ destination-pattern 911
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1141 voip
+ description Outbound Call for 911CUBEtoIPBE
+ destination-pattern 911
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1150 voip
+ description Outbound Call for EFFSCUBEtoIPBE
+ destination-pattern *T
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1151 voip
+ description Outbound Call for EFFSCUBEtoIPBE
+ destination-pattern *T
+ preference 1
+ session protocol sipv2
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1510 voip
+ description Outbound Call for DomesticPBXtoCUBE
+ incoming called-number [0-9]T
+ session protocol sipv2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1520 voip
+ description Outbound Call for InternationalPBXtoCUBE
+ incoming called-number 011T
+ session protocol sipv2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1530 voip
+ description Outbound Call for N11PBXtoCUBE
+ incoming called-number [2-8]11
+ session protocol sipv2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1540 voip
+ description Outbound Call for 911PBXtoCUBE
+ incoming called-number 911
+ session protocol sipv2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1550 voip
+ description Outbound Call for EFFSPBXtoCUBE
+ incoming called-number *T
+ session protocol sipv2
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1500 voip
+ description Inbound Call from IPBEtoCUBE
+ session protocol sipv2
+ incoming called-number 00000T
+ translation-profile incoming ADD_PLUS
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 2000 voip
+ description Inbound Call for PBX 1 from CUBE TO PBX
+ session protocol sipv2
+ session target ipv4:1.1.1.1
+ destination-pattern +00000T
+ translation-profile outgoing STRIP_ZEROS
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+
+NS TDM
+!!! ENSURE IOS VERSION IS 16.6.1        !!!
+!!!   show version                      !!!
+!!! VERIFY UCK9 LICENSE IS ACTIVE       !!!
+!!!   show license                      !!!
+!!! ADD LICENSE IF MISSING              !!!
+!!!   license accept end user agreement !!!
+!!!   license boot level uck9           !!!
+!!! REBOOT THEN REQUIRED                !!!
+!!!   wr                                !!!
+!!!   reload                            !!!
+
+!!! IP SECTION
+logging monitor 7
+!
+interface Loopback60000
+ description ATT IP Flexible Reach Signaling IP
+ ip address 12.213.1.1 255.255.255.255
+exit
+!
+router bgp 65002
+ address-family ipv4
+  network 12.213.1.1 mask 255.255.255.255
+exit
+exit
+
+!!! SIP SECTION
+voice service voip
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback pass-through g711ulaw
+ allow-connections sip to sip
+ rtp-port range 16384 32766
+!
+sip-ua
+ retry invite 2
+ retry notify 2
+ retry register 10
+ timers notify 100
+!
+voice service voip
+ sip
+  bind control source-interface Loopback60000
+  bind media source-interface Loopback60000
+  rel1xx disable
+  min-se 900 session-expires 900
+exit
+exit
+
+!!! CODEC SECTION
+voice class codec 1
+ codec preference 1 g729br8 bytes 30
+ codec preference 2 g729r8 bytes 30
+ codec preference 3 g711ulaw
+exit
+
+!!! CARD SECTION
+!!!  Card Validation has PASSED, there are enough ports to support 23 concurrent calls.
+card type t1 0 0
+!
+network-clock synchronization automatic
+!
+isdn switch-type primary-ni
+!
+controller t1 0/0/0
+ clock source network
+ cablelength short 110
+ framing esf
+ linecode b8zs
+ pri-group timeslots 1-24
+ no shut
+exit
+!
+voice-port 0/0/0:23
+ music-threshold -70
+ no shut
+exit
+!
+
+ !!! ISDN SECTION
+interface Serial0/0/0:23
+ isdn protocol-emulate network
+ no ip route-cache cef
+ no logging event link-status
+ no snmp trap link-status
+ isdn supp-service name calling
+ no cdp enable
+ no isdn outgoing ie connected-number 
+ isdn switch-type primary-ni
+exit
+!
+
+!!! TRANSLATION SECTION
+voice translation-rule 100
+ rule 1 /^$/ /7325551212/
+exit
+!
+voice translation-profile standard_dp
+ translate calling 100
+exit
+!
+voice translation-rule 101
+ rule 1 /.*/ /7325551212/
+exit
+!
+voice translation-profile 911_dp
+ translate calling 101
+exit
+!
+voice translation-rule 102
+ rule 1 /^/ /732/
+exit
+!
+voice translation-profile usa_local
+ translate called 102
+ translate calling 100
+exit
+!
+
+!!! DIAL-PEER SECTION: VOIP OUTBOUND
+dial-peer hunt 1
+!
+dial-peer voice 100 voip
+ description LongDistance
+ destination-pattern 1..........
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 110 voip
+ description LongDistance
+ destination-pattern 1..........
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 200 voip
+ description EFFS
+ destination-pattern *T
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 210 voip
+ description EFFS
+ destination-pattern *T
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 500 voip
+ description Local10D
+ destination-pattern [2-9].........
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 510 voip
+ description Local10D
+ destination-pattern [2-9].........
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 501 voip
+ description Local7D
+ destination-pattern [2-9]......$
+ translation-profile outgoing usa_local
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 511 voip
+ description Local7D
+ destination-pattern [2-9]......$
+ translation-profile outgoing usa_local
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 700 voip
+ description International
+ destination-pattern 0T
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 710 voip
+ description International
+ destination-pattern 0T
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 900 voip
+ description N11
+ destination-pattern [2-8]11
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 910 voip
+ description N11
+ destination-pattern [2-8]11
+ translation-profile outgoing standard_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 901 voip
+ description 911
+ destination-pattern 911
+ translation-profile outgoing 911_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 911 voip
+ description 911
+ destination-pattern 911
+ translation-profile outgoing 911_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 960 voip
+ description 988
+ destination-pattern 9..$
+ translation-profile outgoing 911_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 970 voip
+ description 988
+ destination-pattern 9..$
+ translation-profile outgoing 911_dp
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+
+!!! DIAL-PEER SECTION: VOIP INBOUND
+dial-peer voice 400 voip
+ description Incoming from IPBE
+ incoming called-number 00000T
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ voice-class codec 1
+ no vad
+!
+
+!!! DIAL-PEER SECTION: POTS INBOUND
+dial-peer voice 300 pots
+ description Inbound for TDM-PBX
+ destination-pattern 00000T
+ direct-inward-dial
+ progress_ind alert enable 8
+ port 0/0/0:23
+!
+
+NS analog
+
+!!! ENSURE IOS VERSION IS 16.6.1        !!!
+!!!   show version                      !!!
+!!! VERIFY UCK9 LICENSE IS ACTIVE       !!!
+!!!   show license                      !!!
+!!! ADD LICENSE IF MISSING              !!!
+!!!   license accept end user agreement !!!
+!!!   license boot level uck9           !!!
+!!! REBOOT THEN REQUIRED                !!!
+!!!   wr                                !!!
+!!!   reload                            !!!
+
+!!! IP SECTION
+logging monitor 7
+!
+interface Loopback60000
+ description ATT IP Flexible Reach Signaling IP
+ ip address 12.213.1.1 255.255.255.255
+exit
+!
+router bgp 65002
+ address-family ipv4
+  network 12.213.1.1 mask 255.255.255.255
+exit
+exit
+
+!!! SIP SECTION
+voice service voip
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback pass-through g711ulaw
+ allow-connections sip to sip
+ rtp-port range 16384 32766
+!
+sip-ua
+ retry invite 2
+ retry notify 2
+ retry register 10
+ timers notify 100
+!
+voice service voip
+ sip
+  bind control source-interface Loopback60000
+  bind media source-interface Loopback60000
+  rel1xx disable
+  min-se 900 session-expires 900
+exit
+exit
+
+!!! CODEC SECTION
+voice class codec 1
+ codec preference 1 g729br8 bytes 30
+ codec preference 2 g729r8 bytes 30
+ codec preference 3 g711ulaw
+exit
+
+!!! VOICE PORT SECTION
+voice-port 0/0/0
+ timeouts interdigit 5
+ caller-id enable
+ station-id number 7325551212
+ no shut
+exit
+!
+voice-port 0/0/1
+ timeouts interdigit 5
+ caller-id enable
+ station-id number 7325551212
+ no shut
+exit
+!
+voice-port 0/0/2
+ timeouts interdigit 5
+ caller-id enable
+ station-id number 7325551214
+ no shut
+exit
+!
+voice-port 0/0/3
+ timeouts interdigit 5
+ shut
+exit
+!
+
+!!! TRANSLATION SECTION
+voice translation-rule 102
+ rule 1 /........../ /\0/
+ rule 2 /......./ /732\0/
+exit
+!
+voice translation-profile usa_local
+ translate called 102
+exit
+
+!!! DIAL-PEER SECTION: VOIP OUTBOUND
+dial-peer hunt 1
+!
+dial-peer voice 100 voip
+ description LongDistance
+ destination-pattern 1..........
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 110 voip
+ description LongDistance
+ destination-pattern 1..........
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 200 voip
+ description EFFS
+ destination-pattern *T
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 210 voip
+ description EFFS
+ destination-pattern *T
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 500 voip
+ description LocalLD
+ destination-pattern [2-9]T
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ translation-profile outgoing usa_local
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 510 voip
+ description LocalLD
+ destination-pattern [2-9]T
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ translation-profile outgoing usa_local
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 700 voip
+ description International
+ destination-pattern 0T
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 710 voip
+ description International
+ destination-pattern 0T
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 900 voip
+ description N11
+ destination-pattern [2-8]11
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 910 voip
+ description N11
+ destination-pattern [2-8]11
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 901 voip
+ description 911
+ destination-pattern 911
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.1
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+dial-peer voice 911 voip
+ description 911
+ destination-pattern 911
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ session target ipv4:12.194.1.2
+ voice-class codec 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ no vad
+!
+
+!!! DIAL-PEER SECTION: VOIP INBOUND
+dial-peer voice 400 voip
+ description Incoming from IPBE
+ incoming called-number 00000T
+ session protocol sipv2
+ rtp payload-type nse 99
+ rtp payload-type nte 100
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ voice-class codec 1
+ no vad
+!
+
+!!! DIAL-PEER SECTION: POTS INBOUND
+dial-peer voice 300 pots
+ description Inbound for Analog PBX Hunt Group
+ destination-pattern 00000T
+ preference 1
+ port 0/0/0
+ forward-digits 0
+ no shut
+!
+dial-peer voice 301 pots
+ description Inbound for Analog PBX Hunt Group
+ destination-pattern 00000T
+ preference 2
+ port 0/0/1
+ forward-digits 0
+ no shut
+!
+dial-peer voice 302 pots
+ description Inbound for Analog PBX Stand Alone
+ destination-pattern 000007325551214
+ preference 1
+ huntstop
+ port 0/0/2
+ forward-digits 0
+ no shut
+!
+dial-peer voice 303 pots
+ description Unused Analog Port
+ destination-pattern 00000T
+ preference 3
+ port 0/0/3
+ forward-digits 0
+ shut
+!
+
+NS IP PBX NAT
+router bgp 65002
+ network 12.213.1.1 mask 255.255.255.255
+!
+ip nat inside source static 192.168.1.1 12.213.1.1 route-map voiceonly
+!
+ip route 12.213.1.1 255.255.255.255 G0/0/1 name BVOIP
+!
+access-list 111 permit ip host 192.168.1.1 12.194.0.0 0.0.255.255
+access-list 111 permit ip host 192.168.1.1 12.253.0.0 0.0.255.255
+!
+route-map voiceonly permit 10
+ match ip address 111
+ set ip next-hop 12.2.2.1
+!
+interface G0/0/1
+ ip nat inside
+!
+interface G0/0/0.50
+ ip nat outside
+
+ NS CUBE V6
+ !!! ENSURE IOS VERSION IS 16.6.1        !!!
+!!!   show version                      !!!
+!!! VERIFY UCK9 LICENSE IS ACTIVE       !!!
+!!!   show license                      !!!
+!!! ADD LICENSE IF MISSING              !!!
+!!!   license accept end user agreement !!!
+!!!   license boot level uck9           !!!
+!!! REBOOT THEN REQUIRED                !!!
+!!!   wr                                !!!
+!!!   reload                            !!!
+
+!!! IP SECTION
+logging monitor 7
+interface Loopback60000
+ description ATT IP Flexible Reach Signaling IP
+ ipv6 address 2001::1/64
+exit
+!
+router bgp 65001
+ address-family ipv6
+ network 2001::1/64
+exit
+exit
+
+!!! ENABLE CUBE
+voice service voip
+ mode border-element
+exit
+exit
+!
+wr
+
+!!!!!!!!!!!!!!!!!!!!!!!
+!!! REBOOT REQUIRED !!!
+!!!!!!!!!!!!!!!!!!!!!!!
+
+!!! SIP SECTION
+sip-ua
+ protocol mode dual-stack
+exit
+!
+voice service voip
+ address-hiding
+ allow-connections sip to sip
+ redirect ip2ip
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ sip
+  bind control source-interface Loopback60000
+  bind media source-interface Loopback60000
+  header-passing
+  error-passthru
+  no update-callerid
+  midcall-signaling passthru
+  privacy-policy passthru
+  g729 annexb-all
+exit
+exit
+!
+voice class sip-profiles 1
+ request INVITE sdp-header Audio-Attribute modify "a=ptime:20" "a=ptime:30"
+ request ANY sdp-header Audio-Attribute modify "a=ptime:20" "a=ptime:30"
+ request REINVITE sdp-header Audio-Attribute modify "a=t38faxfillbitremoval:0" ""
+ request INVITE sdp-header Audio-Attribute add "a=ptime:30"
+ response ANY sip-header Allow-Header modify "UPDATE," ""
+exit
+!
+ip rtcp report interval 3000
+no mgcp package-capability res-package
+no mgcp package-capability fxr-package
+no mgcp timer receive-rtcp
+mgcp fax t38 ecm
+!
+gateway
+ media-inactivity-criteria all
+ timer receive-rtcp 5
+ timer receive-rtp 86400
+exit
+!
+sip-ua
+ no remote-party-id
+ retry invite 2
+ timers expires 1800000
+ connection-reuse
+exit
+!
+
+!!! CODEC SECTION
+voice class codec 1
+ codec preference 1 g729r8 bytes 30
+ codec preference 2 g711ulaw
+exit
+
+!!! TRANSLATION SECTION
+voice translation-rule 6
+ rule 1 /^\+00000\(.*$\)/ /\1/
+exit
+!
+voice translation-profile STRIP_ZEROS
+ translate called 6
+exit
+!
+voice translation-rule 7
+ rule 1 /^/ /+/
+exit
+!
+voice translation-profile ADD_PLUS
+ translate called 7
+exit
+
+!!! DIALPEER SECTION
+dial-peer hunt 1
+!
+dial-peer voice 1110 voip
+ description Outbound Call for DomesticCUBEtoIPBE
+ destination-pattern [0-9]T
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::2]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1111 voip
+ description Outbound Call for DomesticCUBEtoIPBE
+ destination-pattern [0-9]T
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::3]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1120 voip
+ description Outbound Call for InternationalCUBEtoIPBE
+ destination-pattern 011T
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::2]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1121 voip
+ description Outbound Call for InternationalCUBEtoIPBE
+ destination-pattern 011T
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::3]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1130 voip
+ description Outbound Call for N11CUBEtoIPBE
+ destination-pattern [2-8]11
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::2]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1131 voip
+ description Outbound Call for N11CUBEtoIPBE
+ destination-pattern [2-8]11
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::3]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1140 voip
+ description Outbound Call for 911CUBEtoIPBE
+ destination-pattern 911
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::2]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1141 voip
+ description Outbound Call for 911CUBEtoIPBE
+ destination-pattern 911
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::3]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1150 voip
+ description Outbound Call for EFFSCUBEtoIPBE
+ destination-pattern *T
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::2]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1151 voip
+ description Outbound Call for EFFSCUBEtoIPBE
+ destination-pattern *T
+ preference 1
+ session protocol sipv2
+ session target ipv6:[2001::3]
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1510 voip
+ description Outbound Call for DomesticPBXtoCUBE
+ incoming called-number [0-9]T
+ session protocol sipv2
+ voice-class sip bind control source-interface G0/0/1
+ voice-class sip bind media source-interface G0/0/1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1520 voip
+ description Outbound Call for InternationalPBXtoCUBE
+ incoming called-number 011T
+ session protocol sipv2
+ voice-class sip bind control source-interface G0/0/1
+ voice-class sip bind media source-interface G0/0/1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1530 voip
+ description Outbound Call for N11PBXtoCUBE
+ incoming called-number [2-8]11
+ session protocol sipv2
+ voice-class sip bind control source-interface G0/0/1
+ voice-class sip bind media source-interface G0/0/1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1540 voip
+ description Outbound Call for 911PBXtoCUBE
+ incoming called-number 911
+ session protocol sipv2
+ voice-class sip bind control source-interface G0/0/1
+ voice-class sip bind media source-interface G0/0/1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1550 voip
+ description Outbound Call for EFFSPBXtoCUBE
+ incoming called-number *T
+ session protocol sipv2
+ voice-class sip bind control source-interface G0/0/1
+ voice-class sip bind media source-interface G0/0/1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 1500 voip
+ description Inbound Call from IPBEtoCUBE
+ session protocol sipv2
+ incoming called-number 00000T
+ translation-profile incoming ADD_PLUS
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ voice-class sip early-offer forced
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400 bytes 48
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 2000 voip
+ description Inbound Call for PBX 1 from CUBE TO PBX
+ session protocol sipv2
+ session target ipv4:1.1.1.1
+ destination-pattern +00000T
+ translation-profile outgoing STRIP_ZEROS
+ voice-class sip bind control source-interface G0/0/1
+ voice-class sip bind media source-interface G0/0/1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+dial-peer voice 2001 voip
+ description Inbound Call for PBX 2 from CUBE TO PBX
+ session protocol sipv2
+ session target ipv4:1.1.1.2
+ destination-pattern +00000T
+ translation-profile outgoing STRIP_ZEROS
+ voice-class sip bind control source-interface G0/0/1
+ voice-class sip bind media source-interface G0/0/1
+ voice-class codec 1
+ voice-class sip asymmetric payload full
+ voice-class sip asserted-id pai
+ voice-class sip privacy-policy passthru
+ voice-class sip profiles 1
+ dtmf-relay rtp-nte
+ fax-relay sg3-to-g3
+ fax rate 14400
+ fax protocol t38 version 0 ls-redundancy 0 hs-redundancy 0 fallback none
+ no vad
+!
+   
+
+
+
 </body>
 </html>
